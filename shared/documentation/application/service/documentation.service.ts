@@ -1,10 +1,24 @@
 import { INestApplication } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
+import * as basicAuth from 'express-basic-auth';
 
 export class DocumentationService {
     constructor() { }
 
-    init(app: INestApplication) {
+    init(app: INestApplication, config: ConfigService) {
+        const SWAGGER_USER = config.get<string>('SWAGGER_USER');
+        const SWAGGER_PASS = config.get<string>('SWAGGER_PASS');
+        app.use(
+            ['/docs', '/docs'],
+            basicAuth({
+                challenge: true,
+                users: {
+                    [SWAGGER_USER]: SWAGGER_PASS,
+                },
+            }),
+        );
+
         const documentBuilder = new DocumentBuilder()
             .setTitle('API REMAS')
             .setVersion('1.0')

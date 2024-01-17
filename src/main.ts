@@ -9,7 +9,8 @@ import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  const config = app.get(ConfigService);
+  
   const configurationService = new ConfigurationService();
   configurationService.init(app);
 
@@ -20,11 +21,10 @@ async function bootstrap() {
   validationService.init(app);
 
   const documentationService = new DocumentationService();
-  documentationService.init(app);
+  documentationService.init(app, config);
 
   app.useGlobalInterceptors(new FilterResponseInterceptor());
 
-  const config = app.get(ConfigService);
   const PORT = config.get<number>('PORT');
   const HOST = config.get<number>('HOST');
   await app.listen(PORT, ()=>{

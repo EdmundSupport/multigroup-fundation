@@ -4,12 +4,12 @@ import { DatasourceModule } from './datasource/datasource.module';
 
 @Module({
     imports: [
-        DatasourceModule,
-        ModuleModule,
+        // DatasourceModule,
+        // ModuleModule,
     ],
     exports: [
-        DatasourceModule,
-        ModuleModule,
+        // DatasourceModule,
+        // ModuleModule,
     ]
 })
 export class V1Module { }
