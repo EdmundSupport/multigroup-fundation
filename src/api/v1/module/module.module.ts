@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { ExpirenmentModule } from "./expirenment";
+import { ExpirenmentModule } from "./expirenment/expirenment.module";
 @Module({
     imports: [
         ExpirenmentModule,

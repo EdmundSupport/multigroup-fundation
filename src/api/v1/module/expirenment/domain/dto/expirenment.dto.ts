@@ -1,5 +1,5 @@
 import { IsBoolean, IsDate, IsOptional, IsString } from "class-validator";
-import { SessionAttributes } from "src/api";
+import { SessionAttributes } from "src/api/v1/datasource/remas/shared/domain/model/aaa";
 
 export class CreateDto implements SessionAttributes {
     @IsOptional()

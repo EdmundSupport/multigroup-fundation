@@ -2,7 +2,7 @@ import { Inject, Injectable } from "@nestjs/common";
 import { FindOptions, Optional } from "sequelize";
 import { NullishPropertiesOf } from "sequelize/types/utils";
 import { FilterResponseHelper } from "shared/filter_response/application/helper/filter_response.helper";
-import { Session, SessionAttributes } from "src/api/v1/datasource";
+import { Session, SessionAttributes } from "src/api/v1/datasource/remas/shared/domain/model/aaa";
 
 @Injectable()
 export class ExpirenmentService {

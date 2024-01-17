@@ -2,7 +2,6 @@ import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query,
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { ExpirenmentService } from "../../application/service/expirenment.service";
 import { CreateDto, FindDto, UpdateDto } from "../../domain/dto/expirenment.dto";
-import { AuthGuard } from "shared/auth/infrastructure/guard/auth.guard";
 
 @ApiTags('Modulo de Expirementación')
 @Controller({

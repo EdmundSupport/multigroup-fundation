@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { SequelizeModule } from "@nestjs/sequelize";
-import { AaaConnectionHelper, aaaConnectionProvider, aaaModels } from "./application";
-
+import { aaaConnectionProvider, aaaModels } from "./application/providers/aaa.connection.provider";
+import {AaaConnectionHelper} from "./application/helper/connection.helper";
 @Module({
     imports: [
         SequelizeModule.forRootAsync({ useClass: AaaConnectionHelper }),

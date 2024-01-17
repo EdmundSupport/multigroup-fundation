@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { ConnectionModule } from ".";
+import { ConnectionModule } from "./connection/connection.module";
 
 @Module({
     imports: [
